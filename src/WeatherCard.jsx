@@ -32,7 +32,6 @@ const WeatherCard = ({
     }
   }, [location, locationLabel, setWeatherParams]);
   const { data, isLoading, errorMessage } = useVisualCrossing(weatherParams);
-  console.log("weatehr data", data);
   return (
     <>
       <ReactWeather

@@ -56,7 +56,7 @@ function App() {
   }, [city]);
 
   return (
-    <>
+    <div className='p-4'>
       <Header setCity={setCity} />
       <WeatherCard
         weatherParams={weatherParams}
@@ -65,7 +65,7 @@ function App() {
         setlocationLabel={setlocationLabel}
         setWeatherParams={setWeatherParams}
       />
-    </>
+    </div>
   );
 }
 

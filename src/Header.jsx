@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 const Header = ({ setCity }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -9,30 +11,48 @@ const Header = ({ setCity }) => {
   };
 
   return (
-    <nav className='bg-blue-500 shadow-md p-4 mb-4'>
-      <div className='container mx-auto flex items-center justify-between flex-wrap'>
+    <nav
+      className='navbar navbar-expand-lg navbar-light p-2 mb-4 shadow rounded'
+      style={{ background: "linear-gradient(to right, #0286C9, #20A2DF)" }}
+    >
+      <div className='container-fluid'>
         {/* Logo Section */}
-        <div className='w-full md:w-auto flex justify-center md:justify-start items-center space-x-3'>
-          <img src='weather-svgrepo-com.svg' alt='logo' className='w-10 h-10' />
-          <span className='text-white text-xl font-bold'>WeatherNow</span>
+        <div className='d-flex align-items-center justify-content-center justify-content-md-start w-100 py-2'>
+          <img src='weather-svgrepo-com.svg' alt='logo' className='w-12 h-12' />
+          <span className='text-white fs-4 fw-bold font-serif ms-3'>
+            WeatherNow
+          </span>
         </div>
 
         {/* Search Form */}
-        <div className='w-full md:w-auto mt-4 md:mt-0'>
+        <div className='d-flex w-100 justify-content-center justify-content-md-end mt-4 mt-md-0'>
           <form
             onSubmit={handleSearch}
-            className='flex items-center justify-center md:justify-end space-x-2'
+            className='d-flex align-items-center justify-content-center'
           >
             <input
               type='text'
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder='Search...'
-              className='py-2 px-4 w-full md:w-auto rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300'
+              className='form-control py-2 px-4 w-100 w-md-auto rounded-3 border border-gray-300 focus:outline-none'
             />
             <button
               type='submit'
-              className='py-2 px-4 bg-white text-blue-500 rounded-md shadow hover:bg-gray-100 transition'
+              className='btn btn-light text-blue-500 rounded-3 ms-2 shadow-sm'
+              style={{
+                transition: "all 0.1s ease-in-out",
+              }}
+              onMouseEnter={e => {
+                e.target.style.backgroundColor = "#3B82F6";
+                e.target.style.color = "white";
+                e.target.style.boxShadow = "0px 10px 20px rgba(0, 0, 0, 0.15)";
+              }}
+              onMouseLeave={e => {
+                e.target.style.backgroundColor = "";
+                e.target.style.color = "";
+                e.target.style.boxShadow = "";
+              }}
             >
               Search
             </button>
