@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import logo from "./assets/weather-svgrepo-com.svg";
 const Header = ({ setCity }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -18,7 +19,7 @@ const Header = ({ setCity }) => {
       <div className='container-fluid'>
         {/* Logo Section */}
         <div className='d-flex align-items-center justify-content-center justify-content-md-start w-100 py-2'>
-          <img src='weather-svgrepo-com.svg' alt='logo' className='w-12 h-12' />
+          <img src={logo} alt='logo' className='w-12 h-12' />
           <span className='text-white fs-4 fw-bold font-serif ms-3'>
             WeatherNow
           </span>
